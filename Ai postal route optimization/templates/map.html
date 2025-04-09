@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimized Route</title>
+    <style>
+        #map { height: 600px; width: 100%; }
+        html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+    </style>
+</head>
+<body>
+    <h1>Optimized Delivery Route</h1>
+    <div id="map"></div>
+    <div class="form-group">
+        <label for="addressNumber">Enter Address Number</label>
+        <input type="text" id="addressNumber" placeholder="Enter Address Number" required />
+      </div>
+      
+      <div class="form-group">
+        <label>
+          <input type="checkbox" id="liveLocationCheckbox" />
+          Use Live Location
+        </label>
+      </div>
+      
+      <div class="form-group">
+        <label for="changedAddress">Select Changed Address</label>
+        <select id="changedAddress">
+          <option value="">--Select Address--</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <button id="submitBtn">Submit</button>
+      </div>
+      
+      <div id="message" class="message"></div>
+    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="_ib",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>""+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=https://maps.${c}apis.com/maps/api/js?+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyCSuD08nUr0fLuQsRr2XnaTjQkbAoTE8Fk", v: "weekly"});</script>
+
+    <script>
+        let map;
+        let directionsService;
+        let directionsRenderer;
+
+        async function initMap() {
+            const locations = {{ optimized_route | tojson }};
+            const mapCenter = {
+                lat: locations.routes[0].legs[0].start_location.lat,
+                lng: locations.routes[0].legs[0].start_location.lng
+            };
+
+            const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+  
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 10,
+                center: mapCenter,
+            });
+
+            
+            directionsService = new google.maps.DirectionsService();
+            directionsRenderer = new google.maps.DirectionsRenderer();
+            directionsRenderer.setMap(map);
+
+            
+            displayRoute(locations);
+        }
+    )
+        function displayRoute(locations) {
+            const route = locations.routes[0];
+            const legs = route.legs;
+
+            
+            const pathCoordinates = [];
+            legs.forEach(leg => {
+                leg.steps.forEach(step => {
+                    const nextSegment = step.end_location;
+                    pathCoordinates.push({ lat: nextSegment.lat(), lng: nextSegment.lng() });
+                });
+            });
+
+            
+            const polyline = new google.maps.Polyline({
+                path: pathCoordinates,
+                geodesic: true,
+                strokeColor: '#FF0000',
+                strokeOpacity: 1.0,
+                strokeWeight: 2,
+            });
+
+            polyline.setMap(map);
+        }
+    </script>
+</body>
+</html>

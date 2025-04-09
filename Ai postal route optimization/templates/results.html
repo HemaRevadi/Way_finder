@@ -1,0 +1,25 @@
+<!-- templates/results.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation Results</title>
+</head>
+<body>
+    <h1>Entered Addresses for Route Optimization</h1>
+
+    <h2>Addresses and Geolocations</h2>
+    <ul>
+        {% for address, location in geolocations %}
+            <li>{{ address }} - Latitude: {{ location[0] }}, Longitude: {{ location[1] }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Distance Matrix</h2>
+    <pre>{{ distance_matrix | tojson(indent=2) }}</pre>
+
+    <a href="/">Go Back</a> <!-- Link back to the input page -->
+</body>
+</html>
