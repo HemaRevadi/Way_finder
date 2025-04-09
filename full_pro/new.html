@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WayFinder</title>
+    <style>
+        body {
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background: url(back1.jpg) no-repeat center center fixed;
+            background-size: cover;
+            background-color: rgba(255, 255, 255, 0.9);
+            background-blend-mode: normal;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color:#0a6783d9;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            position: relative;
+        }
+
+        .navbar ul li {
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .navbar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color:rgb(132, 173, 197);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 10px 15px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+       
+        .welcome {
+            text-align: center;
+            padding: 15px;
+            color: black;
+            
+        }
+
+        .welcome h1 {
+            font-size: 58px;
+            color: black;
+        }
+
+        .modules {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .module {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 80px;
+            width: 300px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .module:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .module h3 {
+            font-size: 25px;
+            margin: 15px 0;
+        }
+        
+    .dropdown a {
+        position: relative;
+    }
+
+    .dropdown a::after {
+        content: '▼'; 
+        font-size: 12px;
+        margin-left: 5px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+    }
+    a {
+    color: black; 
+    text-decoration: none; 
+}
+
+a:hover {
+    color: darkgray; 
+    text-decoration: underline; 
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">WayFinder</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Modules</a>
+                <div class="dropdown-content">
+                    <a href="validation.html">Validation</a>
+                    <a href="assignment.html">PO Assignment</a>
+                </div>
+            </li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div class="welcome">
+        <h1><b>WayFinder</b></h1>
+        <p><b>WELCOME TO POSTAL SUPPORT...</b></p>
+    </div>
+
+    <div class="modules">
+        <a href="portal.html">
+        <div class="module">
+            <h3>Post Officer Module</h3>
+        </div>
+        </a>
+        <a href="portal 2.html">
+        <div class="module">
+            <h3>Postman Module</h3>
+        </div>
+        </a>
+    </div>
+</body>
+</html>
