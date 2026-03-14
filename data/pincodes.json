@@ -1,0 +1,21 @@
+[
+  { "pincode": "500010", "locality": "Alwal", "city": "Hyderabad", "state": "Telangana" },
+  { "pincode": "500019", "locality": "Jubilee Hills", "city": "Hyderabad", "state": "Telangana" },
+  { "pincode": "500032", "locality": "Gachibowli", "city": "Hyderabad", "state": "Telangana" },
+  { "pincode": "500033", "locality": "Jubilee Hills", "city": "Hyderabad", "state": "Telangana" },
+  { "pincode": "500034", "locality": "Banjara Hills", "city": "Hyderabad", "state": "Telangana" },
+  { "pincode": "500036", "locality": "Malakpet", "city": "Hyderabad", "state": "Telangana" },
+  { "pincode": "500072", "locality": "Kukatpally", "city": "Hyderabad", "state": "Telangana" },
+  { "pincode": "500081", "locality": "Hitech City", "city": "Hyderabad", "state": "Telangana" },
+  { "pincode": "500082", "locality": "Madhapur", "city": "Hyderabad", "state": "Telangana" },
+  { "pincode": "500084", "locality": "Kondapur", "city": "Hyderabad", "state": "Telangana" },
+  { "pincode": "500094", "locality": "Sainikpuri", "city": "Hyderabad", "state": "Telangana" },
+  { "pincode": "560034", "locality": "Koramangala", "city": "Bengaluru", "state": "Karnataka" },
+  { "pincode": "560066", "locality": "Whitefield", "city": "Bengaluru", "state": "Karnataka" },
+  { "pincode": "560102", "locality": "HSR Layout", "city": "Bengaluru", "state": "Karnataka" },
+  { "pincode": "110001", "locality": "Connaught Place", "city": "New Delhi", "state": "Delhi" },
+  { "pincode": "400050", "locality": "Bandra West", "city": "Mumbai", "state": "Maharashtra" },
+  { "pincode": "380016", "locality": "Civil Hospital", "city": "Ahmedabad", "state": "Gujarat" },
+  { "pincode": "600020", "locality": "Adyar", "city": "Chennai", "state": "Tamil Nadu" },
+  { "pincode": "201301", "locality": "Noida Sector 1", "city": "Noida", "state": "Uttar Pradesh" }
+]
