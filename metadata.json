@@ -1,7 +1,0 @@
-{
-  "name": "VERIPIN - Local AI Address Verification",
-  "description": "An AI-powered system that uses Tesseract.js OCR and a local database to verify postal addresses and automatically correct invalid pincodes.",
-  "requestFramePermissions": [
-    "camera"
-  ]
-}
